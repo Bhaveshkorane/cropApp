@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    hello bhavesh you are on show page 
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">state code </th>
+            <th scope="col">senses 2001 code</th>
+            <th scope="col">senses 2011 code</th>
+            <th scope="col">name in English</th>
+            <th scope="col">Local name</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+
+            {% for i in state %}
+          <tr>
+            
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{i.stateCode}}</td>
+            <td>{{i.census2001Code}}</td>
+            <td>{{i.census2011Code}}</td>
+            <td>{{i.stateNameEnglish}}</td>
+            <td>{{i.stateNameLocal}}</td>
+            <td><a href="/viewDistrictData/{{i.stateCode}}/"><button class="btn btn-success">view</button></a></td>
+
+            
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+{% endblock %}

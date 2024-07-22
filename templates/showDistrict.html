@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    hello bhavesh you are on show Districet data 
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">district code </th>
+            <th scope="col">district name in English</th>
+            <th scope="col">district name in local language</th>
+            <th scope="col">census 2001 code</th>
+            <th scope="col">census 2011 code</th>
+            <th scope="col">state specific code</th>
+
+          </tr>
+        </thead>
+        <tbody>
+
+            {% for i in district %}
+          <tr>
+            
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{i.districtCode}}</td>
+            <td>{{i.districtNameEnglish}}</td>
+            <td>{{i.districtNameLocal}}</td>
+            <td>{{i.census2001Code}}</td>
+            <td>{{i.census2011Code}}</td>
+            <td>{{i.sscode}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+{% endblock %}
