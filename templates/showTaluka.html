@@ -6,24 +6,25 @@
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">state code </th>
+            <th scope="col">sub district code</th>
             <th scope="col">senses 2001 code</th>
             <th scope="col">senses 2011 code</th>
             <th scope="col">name in English</th>
             <th scope="col">Local name</th>
+            <th scope="col">ss code</th>
           </tr>
         </thead>
         <tbody>
-
             {% for i in taluka %}
           <tr>
             
             <th scope="row">{{ forloop.counter }}</th>
-            <td>{{i.stateCode}}</td>
+            <td>{{i.subdistrictCode}}</td>
             <td>{{i.census2001Code}}</td>
             <td>{{i.census2011Code}}</td>
-            <td>{{i.stateNameEnglish}}</td>
-            <td>{{i.stateNameLocal}}</td>
+            <td>{{i.subdistrictNameEnglish}}</td>
+            <td>{{i.subdistrictNameLocal}}</td>
+            <td>{{i.sscode}}</td>
 
             
           </tr>

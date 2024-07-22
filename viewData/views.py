@@ -11,7 +11,7 @@ def viewState(request):
     return render(request,'showState.html',context={'state':stateData})
 
 def viewDistrict(request,id):
-    print(id)
+    # print(id)
 
     # if scode==27:
     #     query='https://lgdirectory.gov.in/webservices/lgdws/districtList?stateCode='+id
@@ -23,6 +23,9 @@ def viewDistrict(request,id):
     districtData = requests.post(query).json()
     return render(request,'showDistrict.html',context={'district':districtData})
 
-def viewTaluka(request):
-    talukaData = requests.post('https://lgdirectory.gov.in/webservices/lgdws/subdistrictList').json()
+def viewTaluka(request,id):
+    # print(id)
+    query='https://lgdirectory.gov.in/webservices/lgdws/subdistrictList?districtCode='+id
+    talukaData = requests.post(query).json()
+    # print(talukaData)
     return render(request,'showTaluka.html',context={'taluka' : talukaData})
